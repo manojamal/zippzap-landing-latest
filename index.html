@@ -192,9 +192,14 @@ p{margin:0}
 .oc:nth-child(4n+2){background:var(--tint-purple)}
 .oc:nth-child(4n+3){background:var(--tint-orange)}
 .oc:nth-child(4n){background:var(--soft)}
-.oc .ico{width:52px;height:52px;border-radius:50%;background:var(--white);display:grid;place-items:center}
-.oc .ico svg{width:26px;height:26px}
-.occ-more{margin-top:18px;color:var(--muted);font-size:.9375rem}
+.oc .oi{width:72px;height:72px;display:block;object-fit:contain;transition:transform .25s ease}
+.oc:hover .oi{transform:translateY(-3px) rotate(-4deg)}
+.oc.memory{background:var(--soft)}
+.oc.any{padding:0;background:var(--navy);color:#fff}
+.oc.any a{display:flex;flex-direction:column;justify-content:space-between;gap:16px;height:100%;width:100%;padding:clamp(18px,1.8vw,24px);border-radius:22px;color:#fff;text-decoration:none}
+.oc.any small{font-size:.9375rem;font-weight:600;color:#F3C9DA}
+.oc.any:hover small{text-decoration:underline;text-underline-offset:3px}
+.occ-toggle{display:none}
 
 /* plans */
 .plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);align-items:stretch}
@@ -279,6 +284,9 @@ p{margin:0}
   .qr{display:none}
   .close .confetti{display:none}
   .occ{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .occ.clip>li:nth-child(n+9){display:none}
+  .oc .oi{width:60px;height:60px}
+  .occ-toggle{display:flex;width:100%;margin-top:16px}
 }
 @media (max-width:640px){
   :root{--ps:10.4px}
@@ -310,6 +318,7 @@ p{margin:0}
   html{scroll-behavior:auto}
   .t,.chip,.bar i{animation:none}
   .btn,.getbar,.head,.head > .wrap,.logo img{transition:none}
+  .oc .oi{transition:none}.oc:hover .oi{transform:none}
 }
 </style>
 <meta name="description" content="Invite family and friends to send a video, voice note, photo or message. ZippZap turns them into one surprise film for the big day.">
@@ -452,17 +461,25 @@ p{margin:0}
   <section class="sec" id="occasions" aria-labelledby="occ-h">
     <div class="wrap">
       <div class="sec-head"><h2 id="occ-h">For every moment worth celebrating</h2></div>
-      <ul class="occ">
-        <li class="oc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V13a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8M3 21h18" stroke="#1E2453"/><path d="M4 16c2 1.5 3.5 1.5 5.3 0s3.5-1.5 5.4 0 3.5 1.5 5.3 0" stroke="#1E2453"/><path d="M12 11V7M12 4.5v-.01" stroke="url(#zg)"/></svg></span>Birthdays</li>
-        <li class="oc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="14" r="5.5" stroke="#1E2453"/><circle cx="15" cy="14" r="5.5" stroke="url(#zg)"/><path d="m10 4 2 2.5L14 4" stroke="#1E2453"/></svg></span>Weddings &amp; anniversaries</li>
-        <li class="oc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z" stroke="#1E2453"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5" stroke="#1E2453"/><path d="M22 9v6" stroke="url(#zg)"/></svg></span>Graduations</li>
-        <li class="oc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" stroke="#1E2453"/><path d="M17 3v4M15 5h4" stroke="url(#zg)"/></svg></span>Baby showers</li>
-        <li class="oc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13" stroke="url(#zg)"/><path d="M22 2 15 22l-4-9-9-4z" stroke="#1E2453"/></svg></span>Farewells &amp; retirements</li>
-        <li class="oc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="url(#zg)"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="#1E2453"/></svg></span>Get well soon</li>
-        <li class="oc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 6 11h3l-4 6h14l-4-6h3z" stroke="#1E2453"/><path d="M12 17v4" stroke="url(#zg)"/></svg></span>Christmas &amp; New Year</li>
-        <li class="oc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V12l8-5 8 5v9M3 21h18" stroke="#1E2453"/><path d="M10 21v-4h4v4" stroke="#1E2453"/><path d="M12 2v5M10 4h4" stroke="url(#zg)"/></svg></span>Ministry appreciation</li>
+      <ul class="occ" id="occ-list">
+        <li class="oc"><img class="oi" src="assets/icons/birthday.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Birthdays</li>
+        <li class="oc"><img class="oi" src="assets/icons/wedding.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Weddings</li>
+        <li class="oc"><img class="oi" src="assets/icons/anniversary.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Anniversaries</li>
+        <li class="oc"><img class="oi" src="assets/icons/new-baby.webp" alt="" width="72" height="72" loading="lazy" decoding="async">New baby</li>
+        <li class="oc"><img class="oi" src="assets/icons/showers.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Baby &amp; bridal showers</li>
+        <li class="oc"><img class="oi" src="assets/icons/graduation.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Graduations</li>
+        <li class="oc"><img class="oi" src="assets/icons/congratulations.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Congratulations &amp; surprises</li>
+        <li class="oc"><img class="oi" src="assets/icons/farewell.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Farewells</li>
+        <li class="oc"><img class="oi" src="assets/icons/bon-voyage.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Moving abroad &amp; bon voyage</li>
+        <li class="oc"><img class="oi" src="assets/icons/retirement.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Retirements</li>
+        <li class="oc"><img class="oi" src="assets/icons/work.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Work anniversaries &amp; promotions</li>
+        <li class="oc"><img class="oi" src="assets/icons/get-well.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Get well soon</li>
+        <li class="oc"><img class="oi" src="assets/icons/thank-you.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Thank you &amp; ministry appreciation</li>
+        <li class="oc"><img class="oi" src="assets/icons/christmas.webp" alt="" width="72" height="72" loading="lazy" decoding="async">Christmas &amp; New Year</li>
+        <li class="oc memory"><img class="oi" src="assets/icons/memory.webp" alt="" width="72" height="72" loading="lazy" decoding="async">In loving memory</li>
+        <li class="oc any"><a href="#get">Any day worth marking<small>Start yours free &rarr;</small></a></li>
       </ul>
-      <p class="occ-more">And work anniversaries, thank-yous and any day worth marking.</p>
+      <button class="occ-toggle btn btn-line" type="button" aria-controls="occ-list" aria-expanded="false" hidden>See all 16 occasions</button>
     </div>
   </section>
 
@@ -592,6 +609,24 @@ p{margin:0}
     bar.classList.toggle('show', !seen.hero && !seen.get && !seen.footer);
   });
   ['hero', 'get', 'footer'].forEach(function (id) { var el = document.getElementById(id); if (el) barSpy.observe(el); });
+})();
+// Occasions: on phones show the first 8, with a button for the rest
+(function () {
+  var list = document.getElementById('occ-list'), btn = document.querySelector('.occ-toggle');
+  if (!list || !btn || !window.matchMedia) return;
+  var mq = window.matchMedia('(max-width:760px)'), open = false;
+  function set() {
+    list.classList.toggle('clip', mq.matches && !open);
+    btn.hidden = !mq.matches;
+    btn.setAttribute('aria-expanded', String(open));
+    btn.textContent = open ? 'Show fewer occasions' : 'See all 16 occasions';
+  }
+  btn.addEventListener('click', function () {
+    open = !open; set();
+    if (!open) document.getElementById('occasions').scrollIntoView({ block: 'start' });
+  });
+  if (mq.addEventListener) mq.addEventListener('change', set); else mq.addListener(set);
+  set();
 })();
 </script>
 </body>

@@ -1,5 +1,5 @@
-ZippZap home page (zippzap.app) – version 2
-==========================================
+ZippZap home page (zippzap.app) – version 2.1
+============================================
 
 Open index.html in any browser. It works offline – keep the assets folder next to it.
 
@@ -8,6 +8,16 @@ Files
   assets/      logo.svg (ZippZap logo) · logo-mark.svg (browser icon) · avatar.png (sample photo in the phone and TV)
                og-image.png (1200 x 630 picture shown when the link is shared on WhatsApp, Facebook, X)
                fonts/ (Plus Jakarta Sans)
+               icons/ (15 occasion icons, WebP, transparent background, 256 x 256)
+
+What changed in version 2.1 (30 October 2026)
+  - Occasions now use the new ZippZap 3D icons: 15 occasions plus an "Any day worth marking" card
+    (Birthdays, Weddings, Anniversaries, New baby, Baby & bridal showers, Graduations, Congratulations & surprises,
+    Farewells, Moving abroad & bon voyage, Retirements, Work anniversaries & promotions, Get well soon,
+    Thank you & ministry appreciation, Christmas & New Year, In loving memory)
+  - The icons' white backgrounds were removed, edges cleaned, and each was resized to a small WebP file (about 15 KB)
+  - On phones the first 8 occasions show, with a "See all 16 occasions" button for the rest
+  - To change an icon: replace the file in assets/icons/ with the same name (256 x 256, transparent background)
 
 What changed in version 2
   - Tighter first screen: on a laptop the headline, the picture and the start of "How it works" show together
@@ -35,4 +45,4 @@ To check before going live
   - Reviews were not added. Send 2–3 real customer quotes to add a reviews section.
 
 Colours, type and tone follow the ZippZap B2C Brand Guidelines v1.0.
-Prepared by Manoj – RADFINKORP Solutions · 29 October 2026
+Prepared by Manoj – RADFINKORP Solutions · 30 October 2026
